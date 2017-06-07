@@ -33,10 +33,12 @@ class ControllerCommonContentTop extends Controller {
 
 		if (!$layout_id) {
 			$layout_id = $this->model_design_layout->getLayout($route);
+            var_dump('aa');
 		}
 
 		if (!$layout_id) {
 			$layout_id = $this->config->get('config_layout_id');
+            var_dump('123');
 		}
 
 		$this->load->model('extension/module');
@@ -44,7 +46,7 @@ class ControllerCommonContentTop extends Controller {
 		$data['modules'] = array();
 
 		$modules = $this->model_design_layout->getLayoutModules($layout_id, 'content_top');
-
+        var_dump($modules);
 		foreach ($modules as $module) {
 			$part = explode('.', $module['code']);
 
