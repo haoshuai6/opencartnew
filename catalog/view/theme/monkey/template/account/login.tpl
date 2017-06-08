@@ -1,55 +1,40 @@
 <?php echo $header; ?>
-<div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
-  <?php if ($success) { ?>
-  <div class="alert alert-success"><i class="fa fa-check-circle"></i> <?php echo $success; ?></div>
-  <?php } ?>
-  <?php if ($error_warning) { ?>
-  <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?></div>
-  <?php } ?>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="well">
-            <h2><?php echo $text_returning_customer; ?></h2>
-            <p><strong><?php echo $text_i_am_returning_customer; ?></strong></p>
-            <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-              <div class="form-group">
-                <label class="control-label" for="input-email"><?php echo $entry_email; ?></label>
-                <input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="input-password"><?php echo $entry_password; ?></label>
-                <input type="password" name="password" value="<?php echo $password; ?>" placeholder="<?php echo $entry_password; ?>" id="input-password" class="form-control" />
-                <a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a></div>
-              <input type="submit" value="<?php echo $button_login; ?>" class="btn btn-primary" />
-              <?php if ($redirect) { ?>
-              <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
-              <?php } ?>
-            </form>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="well">
-            <h2><?php echo $text_new_customer; ?></h2>
-            <p><strong><?php echo $text_register; ?></strong></p>
-            <p><?php echo $text_register_account; ?></p>
-            <a href="<?php echo $register; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+<div class="location wrap">
+</div>
+<div class="wrap" id="position-fixed">
+  <div class="my-form cf mid-line">
+    <div class="my-box half fl">
+      <div class="form-block">
+        <div class="t"><strong>登录</strong></div>
+        <dl class="item cf">
+          <dt>手机</dt>
+          <dd>
+            <input type="text">
+            <span class="tip"><i class="pd-ico pd-ok"></i></span>
+          </dd>
+        </dl>
+        <dl class="item cf">
+          <dt>密码</dt>
+          <dd>
+            <input type="password">
+            <span class="tip"><i class="pd-ico pd-err"></i></span>
+          </dd>
+        </dl>
+        <div class="sp20"></div>
+        <div class="form-btn">
+          <a href="my.html" class="btn-style blue big">登录</a>
+          <a href="forget.html" style="margin-left:20px;line-height:42px;">忘记密码</a>
         </div>
       </div>
-      <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
+    </div>
+    <div class="my-box half fr">
+      <div class="form-block">
+        <div class="t"><strong>注册</strong></div>
+        <p style="padding-bottom:20px" class="f16">创建并登录您的个人账户，您将在派的门网站享受更多优惠</p>
+        <a href="reg.html" class="btn-style dark big">立即注册</a>
+      </div>
+    </div>
+  </div>
+  <!-- 地址编辑 end -->
 </div>
 <?php echo $footer; ?>

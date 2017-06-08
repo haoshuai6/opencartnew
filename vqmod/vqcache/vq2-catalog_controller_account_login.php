@@ -191,7 +191,7 @@ class ControllerAccountLogin extends Controller {
 		$data['header'] = $this->load->controller('common/header');
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/login.tpl')) {
-			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/login.tpl', $data));
+		    $this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/login.tpl', $data));
 		} else {
 			$this->response->setOutput($this->load->view('default/template/account/login.tpl', $data));
 		}
@@ -201,9 +201,9 @@ class ControllerAccountLogin extends Controller {
 		$this->event->trigger('pre.customer.login');
 
 		// Check if customer has been approved.
-		if (preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $this->request->post['email'])) {  //ÓÊÏä
+		if (preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $this->request->post['email'])) {  //ï¿½ï¿½ï¿½ï¿½
 			$customer_info = $this->model_account_customer->getCustomerByEmail($this->request->post['email']);
-		} else {  //ÊÖ»ú
+		} else {  //ï¿½Ö»ï¿½
 			$customer_info = $this->model_account_customer->getCustomerByTelephone($this->request->post['email']);
 		}
 

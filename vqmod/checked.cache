@@ -340,3 +340,5 @@ admin\view\template\design\banner_form.tpl
 catalog\view\theme\default\template\common\content_siderow.tpl
 admin\controller\module\slideshow.php
 admin\view\template\module\slideshow.tpl
+catalog\view\theme\monkey\template\account\login.tpl
+catalog\view\theme\default\template\account\register.tpl

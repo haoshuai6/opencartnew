@@ -13,3 +13,18 @@ VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <body class="
 ----------------------------------------------------------------------
 
 
+---------- Date: 2017-06-08 18:31:50 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /index.php?route=account/register
+MOD DETAILS:
+   modFile   : D:\phpStudy\opencartnew\vqmod/xml/guangda_tl_c123_sms_register_telephone_verify.xml
+   id        : guangda_tl_c123_sms_register_telephone_verify
+   version   : 0.5
+   vqmver    : 2.5.1
+   author    : opencart.cn
+
+File Name    : catalog/view/theme/*/template/account/register.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <input type="tel" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-tel-telephone" class="form-control" />
+
+----------------------------------------------------------------------
+
+
