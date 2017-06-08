@@ -1,57 +1,77 @@
-<footer>
-  <div class="container">
-    <div class="row">
-      <?php if ($informations) { ?>
-      <div class="col-sm-2">
-        <h5><?php echo $text_information; ?></h5>
-        <ul class="list-unstyled">
-          <?php foreach ($informations as $information) { ?>
-          <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
-          <?php } ?>
-        </ul>
-      </div>
-      <?php } ?>
-      <div class="col-sm-2">
-        <h5><?php echo $text_service; ?></h5>
-        <ul class="list-unstyled">
-          <li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
-          <li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
-          <li><a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a></li>
-        </ul>
-      </div>
-      <div class="col-sm-2">
-        <h5><?php echo $text_extra; ?></h5>
-        <ul class="list-unstyled">
-          <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
-          <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
-          <li><a href="<?php echo $affiliate; ?>"><?php echo $text_affiliate; ?></a></li>
-          <li><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li>
-        </ul>
-      </div>
-      <div class="col-sm-2">
-        <h5><?php echo $text_account; ?></h5>
-        <ul class="list-unstyled">
-          <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-          <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-          <li><a href="<?php echo $wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
-          <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
-        </ul>
-      </div>
-      <div class="col-sm-4">
-        <h5><?php echo $text_contact; ?></h5>
-        <ul class="list-unstyled">
-          <li><div class="icon"><span class="fa fa-map-marker">&nbsp;</span></div><div class="text"><?php echo $address; ?></div></li>
-          <li><div class="icon"><span class="fa fa-phone">&nbsp;</span></div><div class="text"><?php echo $telephone; ?></div></li>
-          <li><div class="icon"><span class="fa fa-envelope">&nbsp;</span></div><div class="text"><?php echo $email; ?></div></li>
-        </ul>
-      </div>
-    </div>
-    <hr>
-    <div class="powered"><?php echo $powered; ?></div>
+<!-- 尾部 -->
+<div class="footer">
+  <div class="quick cf">
+    <dl>
+      <dt>产品空间</dt>
+      <dd>
+        <a href="javascript:;">卧室</a><br>
+        <a href="javascript:;">厨房</a><br>
+        <a href="javascript:;">书房</a><br>
+        <a href="javascript:;">卫生间</a><br>
+      </dd>
+    </dl>
+    <dl>
+      <dt>购物支持</dt>
+      <dd>
+        <a href="javascript:;">商城购物攻略</a><br>
+        <a href="javascript:;">在线支付</a><br>
+        <a href="javascript:;">常见问题</a><br>
+        <a href="javascript:;">送货服务</a><br>
+      </dd>
+    </dl>
+    <dl>
+      <dt>售后服务</dt>
+      <dd>
+        <a href="javascript:;">安装手册</a><br>
+        <a href="javascript:;">品质保证</a><br>
+        <a href="javascript:;">退换货服务</a><br>
+        <a href="javascript:;">联系我们</a><br>
+      </dd>
+    </dl>
+    <dl>
+      <dt>账户指南</dt>
+      <dd>
+        <a href="javascript:;">我的账号</a><br>
+        <a href="javascript:;">我的购物车</a><br>
+        <a href="my-order.html">我的订单</a><br>
+      </dd>
+    </dl>
+    <dl>
+      <dt>新闻室（企业新闻）</dt>
+      <dd>
+        <a href="javascript:;">品牌故事</a><br>
+        <a href="javascript:;">服务体系</a><br>
+        <a href="javascript:;">工艺极致</a><br>
+      </dd>
+    </dl>
+    <dl>
+      <dt>招聘信息</dt>
+      <dd>
+        <a href="job.html">招聘信息</a><br>
+      </dd>
+    </dl>
   </div>
-  <div class="go-top">
-    <a href="#" class="scroll-top"><i class="fa fa-angle-up"></i>TOP</a>
+  <div class="qr-code">
+    关注派的门
+    <a href="javascript:;"><span class="animate"></span></a>
   </div>
-</footer>
-</body></html>
-<!-- OpenCart 2.0 免费模板由 www.opencart.cn 荣耀出品 2016 (c) 成都光大网络科技有限公司 版权所有 -->
+  <p>
+    <a href="javascript:;">隐私政策</a>
+    <a href="javascript:;">服务协议</a>
+  </p>
+  <p>© 2015 版权所有 派的门网上商城(备案/许可证号:鲁ICP备88886666号)</p>
+</div>
+<!-- 尾部 end -->
+<!-- 右侧悬浮 -->
+<div id="fixed-side">
+  <a class="n1" href="javascript:;">在线咨询</a>
+  <a id="side-code" class="n3" href="javascript:;">关注有礼</a>
+  <a class="n4" href="javascript:;">快速购买</a>
+  <a class="n4" href="javascript:;">企业采购</a>
+  <a id="back-top" class="totop" title="回到顶部"></a>
+  <div id="side-code-box" class="animate" style="top:0"></div>
+</div>
+<!-- 右侧悬浮 end -->
+
+</body>
+</html>

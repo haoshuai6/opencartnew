@@ -1,28 +1,27 @@
-<div id="slideshow<?php echo $module; ?>" class="owl-carousel slideshow">
-  <?php foreach ($banners as $banner) { ?>
-  <div class="item">
-    <?php if ($banner['link']) { ?>
-    <a href="<?php echo $banner['link']; ?>"><img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" /></a>
-    <?php } else { ?>
-    <img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" />
-    <?php } ?>
-  </div>
-  <?php } ?>
+<!-- banner轮播 start -->
+<div class="pb-swiper shop-swiper pb-swiper-0">
+    <div class="menu">
+        <h3>所有空间</h3>
+        <a href="javascript:;"><i class="fm-ico fm-ct"></i>餐厅</a>
+        <a href="javascript:;"><i class="fm-ico fm-ws"></i>卧室</a>
+        <a href="javascript:;"><i class="fm-ico fm-sf"></i>书房</a>
+        <a href="javascript:;"><i class="fm-ico fm-etf"></i>儿童房</a>
+        <a href="javascript:;"><i class="fm-ico fm-ys"></i>浴室</a>
+        <a href="javascript:;"><i class="fm-ico fm-fl"></i>辅料</a>
+        <a href="javascript:;"><i class="fm-ico fm-wj"></i>五金</a>
+        <p>咨询电话<br><strong>400-700-8123</strong></p>
+    </div>
+    <div class='swiper-container'>
+        <div class='swiper-wrapper'>
+            <?php foreach ($banners as $banner) { ?>
+            <?php if ($banner['link']) { ?>
+            <div class='swiper-slide'><a href="<?php echo $banner['link']; ?>"><img class="center-h" src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" /></a></div>
+            <?php } else { ?>
+            <div class='swiper-slide'><img  class="center-h" src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" /></div>
+            <?php } ?>
+            <?php } ?>
+        </div>
+    </div>
+    <div class='swiper-pagination'></div>
 </div>
-<script type="text/javascript"><!--
-$(document).ready(function() {
-  $('#slideshow<?php echo $module; ?>').owlCarousel({
-    items: 1, //显示数量
-    loop: true, //循环滚动
-    autoplay: true, //自动播放
-    autoplayTimeout: 3000, //自动切换时间（毫秒）
-    autoplayHoverPause: true, //鼠标移动到图片上面时，是否暂停自动播放
-    autoplaySpeed: 300, //自动播放图片切换动画时长
-    navSpeed: 400, //左右切换按钮图片切换动画时长
-    dotsSpeed: 300, //点击图片下方黑点图片切换动画时长
-    nav: true, //是否显示左右切换按钮
-    navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'], //左右切换按钮图标
-    dots: true, //是否显示图片下方黑点
-  });
-});
---></script>
+<!-- banner轮播 end -->

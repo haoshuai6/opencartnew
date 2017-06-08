@@ -1,147 +1,115 @@
-<!DOCTYPE html>
-<!--[if IE]><![endif]-->
-<!--[if IE 8 ]><html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" class="ie8"><![endif]-->
-<!--[if IE 9 ]><html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" class="ie9"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>">
-<!--<![endif]-->
+<!doctype html>
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title><?php echo $title; ?></title>
-<base href="<?php echo $base; ?>" />
-<?php if ($description) { ?>
-<meta name="description" content="<?php echo $description; ?>" />
-<?php } ?>
-<?php if ($keywords) { ?>
-<meta name="keywords" content= "<?php echo $keywords; ?>" />
-<?php } ?>
-<script src="catalog/view/theme/monkey/javascript/jquery-1.11.3.min.js" type="text/javascript"></script>
-<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
-<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link href="catalog/view/theme/monkey/stylesheet/stylesheet.css" rel="stylesheet">
-<?php foreach ($styles as $style) { ?>
-<link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
-<?php } ?>
-<script src="catalog/view/theme/monkey/javascript/common.js" type="text/javascript"></script>
-<?php foreach ($links as $link) { ?>
-<link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
-<?php } ?>
-<?php foreach ($scripts as $script) { ?>
-<script src="<?php echo $script; ?>" type="text/javascript"></script>
-<?php } ?>
-<?php foreach ($analytics as $analytic) { ?>
-<?php echo $analytic; ?>
-<?php } ?>
+  <meta charset="utf-8">
+  <title>商城 - 派的门</title>
+  <meta name="Keywords" content="" />
+  <meta name="Description" content=""/>
+  <link rel="stylesheet" type="text/css" href="catalog/view/pdoor/static/basic.css">
+  <link rel="stylesheet" type="text/css" href="catalog/view/pdoor/static/shop.css">
+  <script type="text/javascript" src="catalog/view/pdoor/static/js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="catalog/view/pdoor/static/js/swiper.min.js"></script>
+  <script type="text/javascript" src="catalog/view/pdoor/static/js/common.js"></script>
+  <script type="text/javascript" src="catalog/view/pdoor/static/js/shop.js"></script>
+  <style>
+    .pb-swiper .swiper-container .swiper-slide img{
+      width: 100% !important;
+    }
+  </style>
 </head>
-<body class="<?php echo $class; ?>">
-<nav id="top">
-  <div class="container">
-    <?php echo $currency; ?>
-    <?php echo $language; ?>
-    <div id="top-links" class="nav pull-right">
-      <ul class="list-inline">
-        <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm"><?php echo $telephone; ?></span></li>
-        <li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs"><?php echo $text_account; ?></span> <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <?php if ($logged) { ?>
-            <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-            <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-            <li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
-            <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
-            <li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
-            <?php } else { ?>
-            <li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li>
-            <li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
-            <?php } ?>
-          </ul>
-        </li>
-        <li><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm"><?php echo $text_wishlist; ?></span></a></li>
-        <li><a href="<?php echo $shopping_cart; ?>" title="<?php echo $text_shopping_cart; ?>"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm"><?php echo $text_shopping_cart; ?></span></a></li>
-        <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><i class="fa fa-jpy"></i> <span><?php echo $text_checkout; ?></span></a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<header>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <div id="logo">
-          <?php if ($logo) { ?>
-          <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
-          <?php } else { ?>
-          <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
-          <?php } ?>
-        </div>
-      </div>
-      <div class="col-sm-5"><?php echo $search; ?>
-      </div>
-      <div class="col-sm-3 mini-cart"><?php echo $cart; ?></div>
-    </div>
-  </div>
-</header>
-<?php if ($categories) { ?>
-<div class="main-menu-wrapper">
-  <div class="container">
-    <div class="main-menu-mobile">
-      菜单
-      <span class="main-menu-toggle">
-        <i class="fa fa-bars"></i>
-      </span>
-    </div>
-    <div class="main-menu-container">
-      <ul class="main-menu">
-        <li class="parent"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a></li>
-        <?php foreach ($categories as $category) { ?>
-        <li class="parent <?php echo $category['children'] ? 'with-sub-menu' : '' ?>"><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
-          <?php if ($category['children']) { ?>
-          <div class="open-sub-menu">+</div>
-          <ul class="sub-menu">
-            <?php foreach ($category['children'] as $child) { ?>
-            <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
-            <?php } ?>
-          </ul>
-          <?php } ?>
-        </li>
-        <?php } ?>
-      </ul>
-    </div>
+<body>
+<!-- 顶部 -->
+<div class="shop-topbar wrap">
+  欢迎光临派的门
+  <a href="login.html">请登录</a>
+  <a href="reg.html">免费注册</a>
+  <i class="pipe"></i>
+  <a href="my-order.html">我的订单</a>
+  <a href="javascript:;">企业采购</a>
+  <a href="javascript:;">客户服务</a>
+  <i class="pipe"></i>
+  <a href="cart.html"><i class="fm-ico fm-cart"></i>购物车（0）</a>
 
+  <?php if ($qq_login_status) {  ?>
+  <?php if (!$logged) { ?>
+  <?php if ($qq_nickname) {  ?>
+  <?php echo $qq_nickname; ?>
+  <?php } else { ?>
+       <a href="<?php echo $qq_login_url; ?>"><span class="hidden-xs hidden-sm hidden-md"><img src="catalog/view/theme/default/image/qq_login.png"></span></a>
+  <?php
+        	}
+            }
+            }
+        ?>
+  <a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span>
+  <a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span> <span class="caret"></span></a>
 
-    <?php if (false): ?>      
-    <nav id="menu" class="navbar">
-      <div class="navbar-header"><span id="category" class="visible-xs"><?php echo $text_category; ?></span>
-        <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
-      </div>
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="<?php echo $home; ?>"><i class="fa fa-home"></i></a></li>
-          <?php foreach ($categories as $category) { ?>
-          <?php if ($category['children']) { ?>
-          <li class="dropdown"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?></a>
-            <div class="dropdown-menu">
-              <div class="dropdown-inner">
-                <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-                <ul class="list-unstyled">
-                  <?php foreach ($children as $child) { ?>
-                  <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
-                  <?php } ?>
-                </ul>
-                <?php } ?>
-              </div>
-              <a href="<?php echo $category['href']; ?>" class="see-all"><?php echo $text_all; ?> <?php echo $category['name']; ?></a> </div>
-          </li>
-          <?php } else { ?>
-          <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-          <?php } ?>
-          <?php } ?>
-        </ul>
-      </div>
-    </nav>
-    <?php endif ?>
-  </div>
+  <?php if ($logged) { ?>
+  <a href="<?php echo $account; ?>"><?php echo $text_account; ?></a>
+  <a href="<?php echo $order; ?>"><?php echo $text_order; ?></a>
+  <a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a>
+  <a href="<?php echo $download; ?>"><?php echo $text_download; ?></a>
+  <a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a>
+  <?php } else { ?>
+  <a href="<?php echo $register; ?>"><?php echo $text_register; ?></a>
+  <a href="<?php echo $login; ?>"><?php echo $text_login; ?></a>
+  <?php } ?>
+
+  <a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a>
+  <a href="<?php echo $shopping_cart; ?>" title="<?php echo $text_shopping_cart; ?>"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_shopping_cart; ?></span></a>
+  <a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_checkout; ?></span></a>
 </div>
-<?php } ?>
+<!-- 顶部 -->
+
+<div class="shop-header header cf">
+  <div class="wrap">
+    <div class="logo"><a href="catalog/view/pdoor/html-p/index.html">派的门</a></div>
+    <div class="fr">
+      <div class="shop-header-search">
+        <form>
+          <input id="searchtext" name="keyword" type="text" placeholder="请输入搜索内容...">
+          <button type="submit" class="animate">搜索</button>
+        </form>
+      </div>
+      <div class="shop-header-nav header-nav">
+        <a class="curr" href="/">首页</a>
+        <a href="<?php echo $shop; ?>">发现更多产品</a>
+        <a href="<?php echo $classic; ?>">经典系列</a>
+        <a href="<?php echo $case; ?>">客户案例</a>
+        <a href="<?php echo $activity; ?>">最新活动</a>
+        <a href="<?php echo $news; ?>">知识课堂</a>
+        <a href="<?php echo $brand; ?>">品牌精髓</a>
+      </div>
+    </div>
+  </div>
+  <div id="header-menu" class="cf">
+    <!-- <div id="header-nav-1" class="menubox cf">
+       <a href="catalog/view/pdoor/pc-shop/list.html"><img src="catalog/view/pdoor/static/pic/shop/1.jpg">餐厅</a>
+       <a href="catalog/view/pdoor/pc-shop/list.html"><img src="catalog/view/pdoor/static/pic/shop/2.jpg">卧室</a>
+       <a href="catalog/view/pdoor/pc-shop/list.html"><img src="catalog/view/pdoor/static/pic/shop/3.jpg">书房</a>
+       <a href="catalog/view/pdoor/pc-shop/list.html"><img src="catalog/view/pdoor/static/pic/shop/4.jpg">儿童房</a>
+       <a href="catalog/view/pdoor/pc-shop/list.html"><img src="catalog/view/pdoor/static/pic/shop/5.jpg">浴室</a>
+       <a href="catalog/view/pdoor/pc-shop/list.html"><img src="catalog/view/pdoor/static/pic/shop/6.jpg">辅料</a>
+       <a href="catalog/view/pdoor/pc-shop/list.html"><img src="catalog/view/pdoor/static/pic/shop/7.jpg">五金</a>
+     </div>
+     <div id="header-nav-2" class="menubox">
+       <a href="classic.html"><img src="catalog/view/pdoor/static/pic/shop/8.jpg">经典系列</a>
+     </div>
+     <div id="header-nav-3" class="menubox">
+       <a href="case.html"><img src="catalog/view/pdoor/static/pic/shop/2.jpg">客户案例</a>
+     </div>
+     <div id="header-nav-4" class="menubox">
+       <a href="activity.html"><img src="catalog/view/pdoor/static/pic/shop/4.jpg">最新活动</a>
+     </div>
+     <div id="header-nav-5" class="menubox">
+       <a href="news.html"><img src="catalog/view/pdoor/static/pic/shop/6.jpg">知识课堂</a>
+     </div>
+     <div id="header-nav-6" class="menubox">
+       <a href="brand.html"><img src="catalog/view/pdoor/static/pic/shop/3.jpg">品牌精髓</a>
+       <a href="brand-ut.html"><img src="catalog/view/pdoor/static/pic/shop/1.jpg">极致工艺</a>
+       <a href="brand-ss.html"><img src="catalog/view/pdoor/static/pic/shop/7.jpg">服务体系</a>
+     </div>
+   </div>-->
+  </div>
+  <!-- 头部 end -->
+</div>

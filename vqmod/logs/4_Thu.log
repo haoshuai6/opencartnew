@@ -1,0 +1,15 @@
+---------- Date: 2017-06-08 13:57:17 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : D:\phpStudy\opencartnew\vqmod/xml/guangda_tl_qq_online_customer_service.xml
+   id        : qq_online_customer_service_mobile
+   version   : For OpenCart 2.0.1.1
+   vqmver    : 2.5.1
+   author    : GuangDa-TL Mail:support@opencart.cn
+
+File Name    : catalog/view/theme/*/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <body class="
+
+----------------------------------------------------------------------
+
+
